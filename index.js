@@ -8,7 +8,7 @@ app.use(cors({origin: '*'}));
 
 app.use ('/', (req, res) => {
     const url = req.url;
-    const api = 'http://devblock-staging.appzocial.com'
+    const api = process.env.API;
 
     req.pipe(request({url: api + url})).pipe(res);
 });
