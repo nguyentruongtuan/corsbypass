@@ -10,6 +10,8 @@ app.use ('/', (req, res) => {
     const url = req.url;
     const api = process.env.API;
 
+    console.log(api + url);
+
     req.pipe(request({url: api + url})).pipe(res);
 });
 
